@@ -17,6 +17,8 @@
     "jwt-simple": "^0.5.1",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   }
 }
