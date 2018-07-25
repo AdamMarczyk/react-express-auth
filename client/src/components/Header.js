@@ -31,8 +31,4 @@ class Header extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { authenticated: state.auth.authenticated };
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;
