@@ -3,12 +3,14 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const router = require('./router');
 
 mongoose.connect('mongodb://localhost/auth');
 
 app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
 router(app);
 
