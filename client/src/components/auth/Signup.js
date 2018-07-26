@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class Signup extends Component {
-  onSubmit = formProps => {};
+  onSubmit = formProps => {
+    this.props.signup(formProps);
+  };
 
   render() {
     const { handleSubmit } = this.props;
@@ -36,11 +39,10 @@ class Signup extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { errorMessage: state.auth.errorMessage };
-}
-
 export default compose(
-  connect(mapStateToProps),
+  connect(
+    null,
+    actions
+  ),
   reduxForm({ form: 'signup' })
 )(Signup);
